@@ -760,7 +760,7 @@ func DashHandler(c *fiber.Ctx) error {
 			c.Request().Header.SetCookie("__hdnea__", hdneaToken)
 		}
 	}
-
+ 
 	// CRITICAL: Refresh credentials before proxying segments
 	EnsureFreshCredentials()
 
