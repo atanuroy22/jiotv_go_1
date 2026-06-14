@@ -21,7 +21,7 @@ import (
 
 var (
 	RepoOwner        = "atanuroy22"
-	RepoName         = "jiotv_go"
+	RepoName         = "jiotv_go_1"
 	Branch           = "develop"
 	BaseURL          = "https://raw.githubusercontent.com/" + RepoOwner + "/" + RepoName + "/" + Branch
 	JioTVGoTomlURL   = BaseURL + "/configs/jiotv_go.toml"
