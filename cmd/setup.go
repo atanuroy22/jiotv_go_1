@@ -19,16 +19,32 @@ import (
 	"github.com/jiotv-go/jiotv_go/v3/pkg/utils"
 )
 
-const (
+var (
 	RepoOwner        = "atanuroy22"
 	RepoName         = "jiotv_go"
 	Branch           = "develop"
 	BaseURL          = "https://raw.githubusercontent.com/" + RepoOwner + "/" + RepoName + "/" + Branch
 	JioTVGoTomlURL   = BaseURL + "/configs/jiotv_go.toml"
 	CustomChJSONURL  = "https://raw.githubusercontent.com/atanuroy22/iptv/refs/heads/main/output/custom-channels.json"
+)
 
+const (
 	ConfigDir = "configs"
 )
+
+func init() {
+	if o := os.Getenv("JIOTV_REPO_OWNER"); o != "" {
+		RepoOwner = o
+	}
+	if n := os.Getenv("JIOTV_REPO_NAME"); n != "" {
+		RepoName = n
+	}
+	if b := os.Getenv("JIOTV_REPO_BRANCH"); b != "" {
+		Branch = b
+	}
+	BaseURL = "https://raw.githubusercontent.com/" + RepoOwner + "/" + RepoName + "/" + Branch
+	JioTVGoTomlURL = BaseURL + "/configs/jiotv_go.toml"
+}
 
 // SetupEnvironment performs the startup setup:
 // 1. Downloads config files (overwriting existing ones).
