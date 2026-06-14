@@ -1,0 +1,63 @@
+# JioTV Go Configuration
+
+# Enable EPG (Electronic Program Guide)
+epg = true
+
+# Enable Debug Mode
+debug = true
+
+# Enable DRM (Digital Rights Management)
+drm = true
+
+# TS Handler (set to true to disable, false to enable)
+disable_ts_handler = false
+
+# Logout Feature (set to true to disable, false to enable)
+disable_logout = false
+
+# URL Encryption (set to true to disable, false to enable)
+disable_url_encryption = false
+
+# Title of the webpage
+title = "Jio+"
+
+# Log to Stdout
+log_to_stdout = true
+
+# Proxy URL (uncomment and set if needed)
+# proxy = "socks5://user:pass@host:port"
+
+# Log Path (leave empty for default)
+# log_path = ""
+
+# Custom Channels File
+custom_channels_file = "custom_channels.json"
+
+# Custom Channels URL
+custom_channels_url = ""
+
+# Epg url
+epg_url = "https://avkb.short.gy/jioepg.xml.gz"
+# epg_url = ""
+
+# Plugin configuration: plugins are optional and only enabled if explicitly listed
+# Available plugins: none
+plugins = []
+
+# Mark channels as paid if channel name contains any of these terms (case-insensitive).
+# Edit this list and restart the app to apply.
+paid_channel_name_terms = [
+	"star",
+	"jalsha",
+	"history tv",
+	"color",
+	"asianet",
+	"disney",
+	"hungama",
+	"nick jr",
+	"nickelodeon jr",
+	"nick junior",
+	"nicklodean jr",
+	"suvarna",
+	"maa"
+]
