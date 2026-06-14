@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 
 # Get the latest tag that looks like a semver tag.
-tag=$(git describe --tags --match "v[0-9]*.[0-9]*.[0-9]*" --abbrev=0 || true)
+tag=$(git tag -l "v[0-9]*.[0-9]*.[0-9]*" | sort -V | tail -n1)
 echo "Latest tag: $tag"
 if [[ -z "$tag" ]]; then
-    echo "No semver tag found, use 0.0.0"
+    echo "No semver tag found, use v0.0.0"
     tag="v0.0.0"
 fi
 
