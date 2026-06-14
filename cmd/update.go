@@ -94,14 +94,11 @@ func Update(currentVersion, customVersion string) error {
 // getLatestRelease fetches the latest release information from the GitHub API for the given owner and repo.
 // It returns a Release struct containing the release details like tag name, assets etc.
 func getLatestRelease(customVersion string) (*Release, error) {
-	owner := "atanuroy22"
-	repo := "jiotv_go"
-
 	var url string
 	if customVersion != "" {
-		url = fmt.Sprintf("https://api.github.com/repos/%s/%s/releases/tags/%s", owner, repo, customVersion)
+		url = fmt.Sprintf("https://api.github.com/repos/%s/%s/releases/tags/%s", RepoOwner, RepoName, customVersion)
 	} else {
-		url = fmt.Sprintf("https://api.github.com/repos/%s/%s/releases/latest", owner, repo)
+		url = fmt.Sprintf("https://api.github.com/repos/%s/%s/releases/latest", RepoOwner, RepoName)
 	}
 
 	req := fasthttp.AcquireRequest()
